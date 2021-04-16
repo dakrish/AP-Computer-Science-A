@@ -1,0 +1,46 @@
+import java.util.Scanner;
+public class PP1209 {
+  public static void main(String args[]) 
+  {
+    Scanner scan = new Scanner(System.in);
+    System.out.println("Enter one number.");
+    int num1 = scan.nextInt();
+    System.out.println("Corresponding line of Pascal's Triangle: ");
+    int[] pascal2 = calcPascal(num1);
+    for (int index = 0; index < num1; index++)
+    {
+      System.out.print(pascal2[index] + " ");
+    }
+  }
+  static int[] calcPascal (int num1) 
+  {
+    int[] pascalV0 = new int[num1];
+    if (num1 == 1)
+    {
+      pascalV0[0] = 1;
+      return pascalV0;
+    }
+    if (num1 == 2)
+    {
+      pascalV0[0] = 1;
+      pascalV0[1] = 1;
+      return pascalV0;
+    }
+    int[] old = {1, 1};
+    if (num1 > 2)
+    {
+      for (int i = 2; i < num1; i++)
+      {
+        int[] pascal = new int[i+1];
+        pascal[0] = 1;
+        for (int i2 = 1; i2 < i; i2++)
+        {
+          pascal[i2] = old[i2-1]+old[i2];
+        }
+        pascal[i] = 1;
+        old = pascal;
+      }
+    }
+    return old;
+  }
+}

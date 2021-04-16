@@ -1,0 +1,77 @@
+import java.util.Scanner;
+public class PP1208
+{
+  public static void main(String args[])
+  {
+    Scanner scan = new Scanner(System.in);
+    System.out.println("BlurbChecker v1.0      Enter your Blurb");
+    String s = scan.next();
+    System.out.print("True or False: That statement was a valid blurb ");
+    System.out.println(blurbCheck(s));
+  }
+  static boolean blurbCheck (String string1) 
+  {
+    boolean isABlurb = true;
+    if (string1.substring(0,1) != "x")
+    {
+      isABlurb = false;
+    }
+    else
+    {
+      isABlurb = whoozitCheck(string1);
+    }
+    return isABlurb;
+  }
+  static boolean whoozitCheck (String string1) 
+  {
+    boolean isAWhoozit = true;
+    if (string1.substring(0,1) != "x")
+    {
+      isAWhoozit = false;
+    }
+    else
+    {
+      int x = 1;
+      while (string1.substring(x, x+1) == "y" && x < string1.length()-2)
+      {
+        x++;
+      }
+      isAWhoozit = whatzitWhoozitCheck(string1.substring(x, string1.length()-1));
+    }
+    return isAWhoozit;
+  }
+  static boolean whatzitWhoozitCheck (String string1) 
+  {
+    boolean isAWhatzitWhoozit = true;
+    if (string1.substring(0,1) != "q")
+    {
+      isAWhatzitWhoozit = false;
+    }
+    else
+    {
+      if (string1.substring(1,2) != "z" || string1.substring(1,2) != "d")
+      {
+        isAWhatzitWhoozit = false;
+      }
+      else
+      {
+        if (string1.substring(2,3) != "x")
+        {
+          isAWhatzitWhoozit = false;
+        }
+        else
+        {
+          int x = 3;
+          while (string1.substring(x, x+1) == "y" && x < string1.length()-2)
+          {
+            x++;
+          }
+          if (x >= string1.length()-2){}
+          else
+            isAWhatzitWhoozit = whatzitWhoozitCheck(string1.substring(x, string1.length()-1));
+        }
+      }
+    }
+    return isAWhatzitWhoozit;
+  }
+}

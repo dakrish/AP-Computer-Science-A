@@ -1,0 +1,71 @@
+public class Maze
+{
+  private final int TRIED = 3; 
+  private final int PATH = 7;
+  private int[][][] grid = {{{1, 1}, {1, 1}}, {{1, 1}, {1, 1}}};
+  public boolean traverse (int row, int column, int z)
+  {
+    boolean done = false;
+    if (valid (row, column, z))
+    {
+      grid[row][column][z] = TRIED;  // this cell has been tried
+      if (row == grid.length-1 && column == grid[0].length-1 && z == grid[0][0].length-1)
+        done = true;  // the maze is solved
+      else
+      {
+        done = traverse (row+1, column, z);     // back
+        if (!done)
+          done = traverse (row, column+1, z);  // right
+        if (!done)
+          done = traverse (row, column, z+1);  // up
+        if (!done)
+          done = traverse (row-1, column, z);  // forwards
+        if (!done)
+          done = traverse (row, column-1, z);  // left
+        if (!done)
+          done = traverse (row, column, z-1);  // down
+      }
+      if (done)
+        grid[row][column][z] = PATH;
+    }
+    return done;
+  }
+//-----------------------------------------------------------------
+// Determines if a specific location is valid.
+//-----------------------------------------------------------------
+  private boolean valid(int row, int column, int z)
+  {
+    boolean result = false; 
+// check if cell is in the bounds of the matrix
+    if (row >= 0 && row < grid.length && column >= 0 && column < grid[row].length && z >= 0 && z < grid[row][column].length)
+// check if cell is not blocked and not previously tried
+      if (grid[row][column][z] == 1)
+      result = true;
+    return result;
+  }
+//-----------------------------------------------------------------
+// Returns the maze as a string.
+//-----------------------------------------------------------------
+  public String toString()
+  {
+    int row = 0;
+    int column = 0;
+    int z = 0;
+    String result = "\n";
+    for (; z < grid[row][column].length; z++)
+    {
+      result += "Level " + (z+1) + " of maze \n";
+      for (; row < grid.length; row++)
+      {
+        for (; column < grid[row].length; column++)
+        {
+          result += grid[row][column][z] + "";
+        }
+        result += "\n";
+        column = 0;
+      }
+      row = 0;
+    }
+    return result;
+  }
+}

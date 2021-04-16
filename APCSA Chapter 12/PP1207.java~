@@ -1,0 +1,32 @@
+public class PP1207
+{
+  public static void main(String args[])
+  {
+    Scanner scan = new Scanner(System.in);
+    System.out.println("BlurbGen V1");
+    System.out.print("Your random blurb: ");
+    System.out.println(blurbGen(s));
+  }
+  static String blurbGen () 
+  {
+    String string = whoozitGen() + whatzitGen();
+    while (Math.random() - 0.5 >= 1) 
+      string += generateWhatszit();
+    return string;
+  }
+  static String whoozitGen () 
+  {
+    String string;
+    string = "x";
+    while (Math.random() - 0.5 >= 1) 
+      string += "y";
+    return string;
+  }
+  static String whatzitGen()
+  {
+    if (Math.random() - 0.5 >= 1) 
+      return "qz" + generateWhoozit();
+    else
+      return "qd" + generateWhoozit();
+  }
+}

@@ -1,0 +1,37 @@
+/*
+Write the entire BusCommuter class which should extend the PayCommuter class. The class contains the following elements: a constant double variable MONTHLY_RATE; a boolean variable busPass; a constructor; and the methods described below.
+
+The BusCommuter constructor should take three arguments, a String representing the name of the commuter, a double representing the fare they must pay to commute, and a double representing the monthly rate for riding the bus. A customer may pay as they ride, or use the monthly rate for unlimited rides.  In the constructor, set the name, FARE , and MONTHLY_RATE based on these arguments, and then set busPass to false.
+
+Write a method called buyBusPass that takes a double as an argument representing the monthly fare amount. If the value is greater than the monthly rate, set the busPass variable to true. Write an overridden method for addMiles, checking to see if the commuter has paid his or her fare, or has purchased the monthly bus pass, and then behaving like a PayCommuter. Write an overridden method for toString which prints as shown below.
+
+Ex. BusCommuter b = new BusCommuter("Colin",1.25,12.50);
+
+   System.out.println(b);     // "Colin: 0 - Single ride: $1.25 - Monthly pass: $12.50"
+*/
+public BusCommuter extends PayCommuter
+{
+ double MONTHLY_RATE;
+    boolean busPass;
+    public BusCommuter (String name, double fare, double rate)
+    {
+     super(name, fare);
+        MONTHLY_RATE = rate;
+        busPass = false;
+    }
+    public void buyBussPass (double fare)
+    {
+     busPass = (fare > MONTHLY_RATE);
+    }
+    public void addMiles()
+    {
+     if ((super.getPaid() == true) || (busPass))
+        {
+         super.addMiles();
+        }
+    }
+    public String toString() 
+    {
+  return (super.toString() + "- Monthly pass: $" + MONTHLY_FARE);
+ }
+}
