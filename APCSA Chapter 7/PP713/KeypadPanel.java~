@@ -1,0 +1,171 @@
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.border.*;
+
+
+public class KeypadPanel extends JPanel
+{
+  public JLabel keypadDisplay;
+  public JButton 1, 2, 3, 4, 5, 6, 7, 8, 9, call, 0, endCall, clear;
+  public String keypadText;
+  
+  public KeypadPanel()
+  {
+    setLayout(new GridLayout(4, 3));
+    
+    keypadText = "";
+    
+    keypadDisplay = new JLabel (keypadText);
+    quote.setFont (new Font ("Helvetica", Font.BOLD, 24));
+    
+    1 = new JRadioButton ("1", true);
+    1.setBackground (Color.green);
+    1.setBorder(BorderFactory.createLineBorder(Color.red, 5));
+    2 = new JRadioButton ("2", true);
+    2.setBackground (Color.green);
+    2.setBorder(BorderFactory.createLineBorder(Color.red, 5));
+    3 = new JRadioButton ("3", true);
+    3.setBackground (Color.green);
+    3.setBorder(BorderFactory.createLineBorder(Color.red, 5));
+    4 = new JRadioButton ("4", true);
+    4.setBackground (Color.green);
+    4.setBorder(BorderFactory.createLineBorder(Color.red, 5));
+    5 = new JRadioButton ("5", true);
+    5.setBackground (Color.green);
+    5.setBorder(BorderFactory.createLineBorder(Color.red, 5));
+    6 = new JRadioButton ("6", true);
+    6.setBackground (Color.green);
+    6.setBorder(BorderFactory.createLineBorder(Color.red, 5));
+    7 = new JRadioButton ("7", true);
+    7.setBackground (Color.green);
+    7.setBorder(BorderFactory.createLineBorder(Color.red, 5));
+    8 = new JRadioButton ("8", true);
+    8.setBackground (Color.green);
+    8.setBorder(BorderFactory.createLineBorder(Color.red, 5));
+    9 = new JRadioButton ("9", true);
+    9.setBackground (Color.green);
+    9.setBorder(BorderFactory.createLineBorder(Color.red, 5));
+    0 = new JRadioButton ("0", true);
+    0.setBackground (Color.green);
+    0.setBorder(BorderFactory.createLineBorder(Color.red, 5));
+    call = new JRadioButton ("Call", true);
+    call.setBackground (Color.green);
+    call.setBorder(BorderFactory.createLineBorder(Color.red, 5));
+    endCall = new JRadioButton ("End Call", true);
+    endCall.setBackground (Color.green);
+    endCall.setBorder(BorderFactory.createLineBorder(Color.red, 5));
+    clear = new JRadioButton ("Clear", true);
+    clear.setBackground (Color.green);
+    clear.setBorder(BorderFactory.createLineBorder(Color.red, 5));
+    
+    ButtonGroup group = new ButtonGroup();
+    group.add(1);
+    group.add(2);
+    group.add(3);
+    group.add(4);
+    group.add(5);
+    group.add(6);
+    group.add(7);
+    group.add(8);
+    group.add(9);
+    group.add(call);
+    group.add(0);
+    group.add(endCall);
+    
+    ClickListener listener = new QuoteListener();
+    1.addActionListener (listener);
+    2.addActionListener (listener);
+    3.addActionListener (listener);
+    4.addActionListener (listener);
+    5.addActionListener (listener);
+    6.addActionListener (listener);
+    7.addActionListener (listener);
+    8.addActionListener (listener);
+    9.addActionListener (listener);
+    0.addActionListener (listener);
+    
+    add(1);
+    add(2);
+    add(3);
+    add(4);
+    add(5);
+    add(6);
+    add(7);
+    add(8);
+    add(9);
+    add(call);
+    add(0);
+    add(endCall);
+    
+    setBackground (Color.green);
+    setPreferredSize (new Dimension(600, 100));
+  }
+  private class ClickListener implements ActionListener
+  {
+    public void actionPerformed (ActionEvent event)
+    {
+      Object source = event.getSource();
+      
+      if (source == 1)
+      {
+        keypadText +=1;
+        keypadDisplay.setText (keypadText);
+      }
+      else
+        if (source == 2)
+      {
+        keypadText +=2;
+        keypadDisplay.setText (keypadText);
+      }
+      else
+        if (source == 3)
+      {
+        keypadText +=3;
+        keypadDisplay.setText (keypadText);
+      }
+      else
+        if (source == 4)
+      {
+        keypadText +=4;
+        keypadDisplay.setText (keypadText);
+      }
+      else
+        if (source == 5)
+      {
+        keypadText +=5;
+        keypadDisplay.setText (keypadText);
+      }
+      else
+        if (source == 6)
+      {
+        keypadText +=6;
+        keypadDisplay.setText (keypadText);
+      }
+      else
+        if (source == 7)
+      {
+        keypadText +=7;
+        keypadDisplay.setText (keypadText);
+      }
+      else
+        if (source == 8)
+      {
+        keypadText +=8;
+        keypadDisplay.setText (keypadText);
+      }
+      else
+        if (source == 9)
+      {
+        keypadText +=9;
+        keypadDisplay.setText (keypadText);
+      }
+      else
+        if (source == 0)
+      {
+        keypadText +=0;
+        keypadDisplay.setText (keypadText);
+      }
+    }
+  }
+}

@@ -1,0 +1,25 @@
+import javax.swing.*;
+import java.awt.*;
+import javax.swing.border.*;
+public class Keypad
+{
+  public static void main (String[] args)
+  {
+    JFrame dialFrame = new JFrame ("Calling . . . ");
+    dialFrame.setDefaultCloseOperation (JFrame.EXIT_ON_CLOSE);
+    
+    KeypadPanel gui = new KeypadPanel();
+    
+    
+    JPanel mainPanel = new JPanel();
+    mainPanel.setLayout(new BoxLayout(mainPanel, BoxLayout.X_AXIS));
+    JPanel panel1 = new DisplayPanel();
+    gui.setBorder(BorderFactory.createLineBorder(Color.red, 10));
+    
+    mainPanel.add(gui);
+    mainPanel.add(panel1);
+    quoteFrame.getContentPane().add(mainPanel);
+    quoteFrame.pack();
+    quoteFrame.show();
+  }
+}

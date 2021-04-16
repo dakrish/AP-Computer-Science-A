@@ -1,0 +1,12 @@
+public interface Priority
+{
+  int priorityLevel;
+  public void setPriority(int priority)
+  {
+    priorityLevel = priority;
+  }
+  public int getPriority()
+  {
+    return priorityLevel;
+  }
+}

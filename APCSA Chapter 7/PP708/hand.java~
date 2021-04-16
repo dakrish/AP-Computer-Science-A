@@ -1,0 +1,31 @@
+import java.util.ArrayList
+public class hand 
+{
+  public hand()
+  {
+  }
+  public void clear()
+  {
+  }
+  public void addCard(Card c)
+  {
+  }
+  public void removeCard(Card c)
+  {
+  }
+    public void removeCard(int position)
+  {
+  }
+    public int getCardCount()
+  {
+  }
+    public Card getCard(int position)
+  {
+  }
+    public void sortBySuit()
+  {
+  }
+    public void sortByValue()
+  {
+  }
+}

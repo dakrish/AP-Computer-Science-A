@@ -1,0 +1,37 @@
+public class Task implements priority, Comparable<Task>, Complexity
+{
+  String taskName;
+  int priorityLevel;
+  public Task(String inputtedTaskName, int inputtedPriorityLevel)
+  {
+    taskName = inputtedTaskName;
+    priorityLevel = inputtedPriorityLevel;
+  }
+  public int compareTo(Task rat) 
+  {
+    return (1);
+  }
+  public int getPriority()
+  {
+    return priorityLevel;
+  }
+  public String getTaskName()
+  {
+    return taskName;
+  }
+  public void setPriority(int newPriorityLevel)
+  {
+    priorityLevel = newPriorityLevel;
+  }
+  public void setTaskName(String newTaskName)
+  {
+    taskName = newTaskName;
+  }
+  public int getComplexity()
+  {
+    return 1;
+  }
+  public void setComplexity(int i)
+  {
+  }
+}

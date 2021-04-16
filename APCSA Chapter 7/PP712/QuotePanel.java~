@@ -1,0 +1,14 @@
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+
+
+public class QuotePanel extends JPanel
+{
+  public QuotePanel()
+  {
+    quote = new JLabel (comedyQuote);
+    quote.setFont (new Font ("Helvetica", Font.BOLD, 24));
+    
+    add (quote);
+}

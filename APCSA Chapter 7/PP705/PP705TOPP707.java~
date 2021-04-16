@@ -1,0 +1,9 @@
+public class PP705TOPP707
+{
+  public static void main(String[] args)
+  {
+    Task t1 = new Task("Do Math Homework", 1);
+    Task t2 = new Task("Study for AP Bio midterm", 3);
+    Task t3 = new Task("Do CSA Homework", 1);
+  }
+}
