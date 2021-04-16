@@ -1,0 +1,61 @@
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
+import javax.swing.JFrame;
+
+public class SodaPanel extends JPanel
+{
+  static JLabel sizeLabel, numberLabel;
+  public static JLabel costLabel;
+  static JTextField sodaSize, sodaNumber;
+  public double costDiameter = 0.00;
+  public double costNumber = 0.00;
+  public double costSoda = 0.00;
+  
+  public SodaPanel()
+  {
+    sizeLabel = new JLabel ("Soda Height (inches):");
+    numberLabel = new JLabel ("Number of Sodas: ");
+    costLabel = new JLabel ( " $ " + costSoda);
+    
+    sodaSize = new JTextField (5);
+    sodaSize.setText("0");
+    sodaSize.addActionListener (new sodaListener());
+    
+    sodaNumber = new JTextField (5);
+    sodaNumber.setText("0");
+    sodaNumber.addActionListener (new sodaListener());
+    
+    add (sizeLabel);
+    add (sodaSize);
+    add (numberLabel);
+    add (sodaNumber);
+    
+    JButton push = new JButton ("Calculate Cost");
+    push.addActionListener (new ButtonListener());
+    
+    add (push);
+    
+    add (costLabel);
+    setPreferredSize (new Dimension(280, 100));
+    setBackground (Color.cyan);
+  }
+  private class sodaListener implements ActionListener
+  {
+    public void actionPerformed (ActionEvent event)
+    {
+      costDiameter = (Double.parseDouble(sodaSize.getText()))-4;
+      costNumber = Double.parseDouble(sodaNumber.getText());
+      costLabel.setText("$ "+costDiameter * costNumber);
+    }
+  }
+  private class ButtonListener implements ActionListener
+  {
+    public void actionPerformed (ActionEvent event)
+    {
+      costDiameter = (Double.parseDouble(sodaSize.getText()))-4;
+      costNumber = Double.parseDouble(sodaNumber.getText());
+      costLabel.setText("$ "+costDiameter * costNumber);
+    }
+  }
+}

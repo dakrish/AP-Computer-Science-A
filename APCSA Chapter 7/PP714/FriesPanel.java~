@@ -1,0 +1,61 @@
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
+import javax.swing.JFrame;
+
+public class FriesPanel extends JPanel
+{
+  static JLabel sizeLabel, numberLabel;
+  public static JLabel costLabel;
+  static JTextField friesSize, friesNumber;
+  public double costDiameter = 0.00;
+  public double costNumber = 0.00;
+  public double costFries = 0.00;
+  
+  public FriesPanel()
+  {
+    sizeLabel = new JLabel ("Fries Amount:");
+    numberLabel = new JLabel ("Number of Friess: ");
+    costLabel = new JLabel ( " $ " + costFries);
+    
+    friesSize = new JTextField (5);
+    friesSize.setText("0");
+    friesSize.addActionListener (new friesListener());
+    
+    friesNumber = new JTextField (5);
+    friesNumber.setText("0");
+    friesNumber.addActionListener (new friesListener());
+    
+    add (sizeLabel);
+    add (friesSize);
+    add (numberLabel);
+    add (friesNumber);
+    
+    JButton push = new JButton ("Calculate Cost");
+    push.addActionListener (new ButtonListener());
+    
+    add (push);
+    
+    add (costLabel);
+    setPreferredSize (new Dimension(280, 100));
+    setBackground (Color.cyan);
+  }
+  private class friesListener implements ActionListener
+  {
+    public void actionPerformed (ActionEvent event)
+    {
+      costDiameter = (Double.parseDouble(friesSize.getText()))*0.1;
+      costNumber = Double.parseDouble(friesNumber.getText());
+      costLabel.setText("$ "+costDiameter * costNumber);
+    }
+  }
+  private class ButtonListener implements ActionListener
+  {
+    public void actionPerformed (ActionEvent event)
+    {
+      costDiameter = (Double.parseDouble(friesSize.getText()))-4;
+      costNumber = Double.parseDouble(friesNumber.getText());
+      costLabel.setText("$ "+costDiameter * costNumber);
+    }
+  }
+}
