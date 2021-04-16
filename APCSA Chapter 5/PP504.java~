@@ -1,0 +1,35 @@
+import java.util.Scanner;
+import java.util.Random;
+
+public class PP504
+{
+  public static void main (String[] args)
+  {
+    Scanner scan = new Scanner (System.in);
+    Random rand = new Random();
+    int guess = 0;
+    int chosen = 0;
+    System.out.println ("Enter a number: ");
+    guess = scan.nextInt();
+    chosen = rand.nextInt(101);
+    
+    while (guess != chosen)
+    {
+      char c1 = num.charAt(index);
+      if (c1 == '0')
+      {
+        zeroCount++;
+      }
+      if (c1 == '1' || c1 == '3' || c1 == '5' || c1 == '7' || c1 == '9')
+      {
+        oddCount++;
+      }
+      if (c1 == '2' || c1 == '4' || c1 == '6' || c1 == '8')
+      {
+        evenCount++;
+      }
+      index++;
+    }
+    System.out.println("Number of 0: " + zeroCount + "  Number of odd: " + oddCount + "  Number of even: " + evenCount);
+  }
+}

@@ -1,0 +1,14 @@
+public class PP607A
+{
+  public static void main (String[] args)
+  {
+    for (int row = 1; row <= 10; row++)
+    {
+      for (int star = 1; star <= 10-row+1; star++)
+      {
+        System.out.print ("*");
+      }
+      System.out.println();
+    }
+  }
+}

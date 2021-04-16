@@ -1,0 +1,35 @@
+import java.util.Scanner;
+
+public class PP503
+{
+  public static void main (String[] args)
+  {
+    Scanner scan = new Scanner (System.in);
+    int index, zeroCount, oddCount, evenCount = 0
+    System.out.println ("Enter a number: ");
+    String num = scan.next();
+    System.out.println ("You entered: " + num);
+    
+    while (index <= num.length())
+    {
+      if (num.charAt(index) == 0)
+      {
+        zeroCount++;
+      }
+      else
+      {
+        if (num.charAt(index) == 1 || num.charAt(index) == 3 || num.charAt(index) == 5 || num.charAt(index) == 7 || num.charAt(index) == 9 ||)
+        {
+          oddCount++;
+        }
+        else
+        {
+          evenCount++;
+        }
+      }
+      index++;
+    }
+    System.out.println("Number of 0: " + zeroCount + "Number of odd: " + oddCount + "Number of even: " + evenCount);
+  }
+}
+

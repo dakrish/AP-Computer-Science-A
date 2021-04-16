@@ -1,0 +1,32 @@
+import java.awt.Color;
+import java.applet.Applet;
+import java.awt.*;
+
+public class PP612 extends Applet
+{
+  Color brown = new Color(153,102,0);
+  private final int CELL_SIZE = 20;
+  public void paint(Graphics page)
+  {
+    int xPos, yPos;
+    setBackground (brown);
+    
+    for (int row=1; row <= 8; row++)
+    {
+      yPos = row * CELL_SIZE;
+      
+      for (int column=1; column <= 8; column++)
+      {
+        xPos = column * CELL_SIZE;
+        
+        page.setColor (Color.blue);
+        page.fillRect (xPos, yPos, CELL_SIZE, CELL_SIZE);
+        page.setColor (Color.cyan);
+        page.fillOval (xPos, yPos, CELL_SIZE, CELL_SIZE);
+        page.setColor (Color.black);
+        page.drawLine (xPos, yPos, xPos+CELL_SIZE, yPos+CELL_SIZE);
+        page.drawLine (xPos+CELL_SIZE, yPos, xPos, yPos+CELL_SIZE);
+      }
+    }
+  }
+}

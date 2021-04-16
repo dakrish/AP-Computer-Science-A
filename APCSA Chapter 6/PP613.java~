@@ -1,0 +1,25 @@
+import java.applet.Applet;
+import java.awt.*;
+
+public class PP613 extends Applet
+{
+   public void paint(Graphics page)
+   {
+      int x, y;
+
+      setBackground (Color.black);
+
+      for (int row=1; row <= GRID_SIZE; row++)
+      {
+         y = row * CELL_SIZE;
+
+         for (int col=1; col <= GRID_SIZE; col++)
+         {
+            x = col * CELL_SIZE;
+            page.setColor (Color.black);
+            page.drawLine (x, y, x, y+30);
+            page.drawLine (x, y+30, x+30, y+30);
+         }
+      }
+   }
+}

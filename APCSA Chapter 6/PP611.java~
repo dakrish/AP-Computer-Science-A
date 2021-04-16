@@ -1,0 +1,24 @@
+import java.applet.Applet;
+import java.awt.*;
+
+public class PP611 extends Applet
+{
+   public void paint(Graphics page)
+   {
+      int y = 5;
+      int length = 0;
+
+      setBackground (Color.black);
+
+      page.setColor (Color.green);
+
+      for (int count=1; count <= 20; count++)
+      {
+         y += GAP;
+
+         length = ((int) (Math.random() * 250) + 25);
+
+         page.drawLine (10, y, 10+length, y);
+      }
+   }
+}

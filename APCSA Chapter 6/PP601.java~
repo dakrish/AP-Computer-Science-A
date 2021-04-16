@@ -1,0 +1,13 @@
+import java.util.Scanner;
+public class PP601{
+  public static void main(String []args){
+    Scanner scan = new Scanner(System.in);
+      String newStr = "";
+    int count = 0;
+    for (int num = str.length()-1; num >= 0; num--)
+    {
+      newStr+=str.charAt(num);
+    }
+    return newStr;
+  }
+}
